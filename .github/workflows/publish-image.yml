@@ -7,14 +7,15 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
-defaults:
-  run:
-    working-directory: "./ImageApplication.Api"
-
 jobs:
   build:
     name: Docker
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./ImageApplication.Api
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
